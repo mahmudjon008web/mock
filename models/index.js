@@ -15,6 +15,10 @@ db.ReadingPart = require("./reading/readingPart.model")(sequelize, Sequelize)
 db.Question = require("./reading/question.model")(sequelize, Sequelize)
 db.Option = require("./reading/option.model")(sequelize, Sequelize)
 db.Reading = require("./reading/reading.model")(sequelize, Sequelize)
+db.Listening = require("./listening/listening.model")(sequelize, Sequelize)
+db.listeningPart = require("./listening/listeningPart.model")(sequelize, Sequelize)
+db.listeningQuestion = require("./listening/listeningQuestion.model")(sequelize, Sequelize)
+db.listeningOption = require("./listening/listeningOption.model")(sequelize, Sequelize)
 
 
 db.Reading.hasMany(db.ReadingPart, {
@@ -45,6 +49,39 @@ db.Question.hasMany(db.Option, {
 db.Option.belongsTo(db.Question, {
   foreignKey: "questionId",
   as: "question"
+})
+
+db.Listening.hasMany(db.listeningPart, {
+    foreignKey: "listeningId",
+    as: "parts",
+    onDelete: "CASCADE"
+})
+
+db.listeningPart.belongsTo(db.Listening, {
+    foreignKey: "listeningId",
+    as: "listening"
+})
+
+db.listeningPart.hasMany(db.listeningQuestion, {
+    foreignKey: "listeningPartId",
+    as: "questions",
+    onDelete: "CASCADE"
+})
+
+db.listeningQuestion.belongsTo(db.listeningPart, {
+    foreignKey: "listeningPartId",
+    as: "part"
+})
+
+db.listeningQuestion.hasMany(db.listeningOption, {
+    foreignKey: "listeningQuestionId",
+    as: "options",
+    onDelete: "CASCADE"
+})
+
+db.listeningOption.belongsTo(db.listeningQuestion, {
+    foreignKey: "listeningQuestionId",
+    as: "question"
 })
 
 module.exports = db

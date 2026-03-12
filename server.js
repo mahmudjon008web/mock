@@ -12,6 +12,7 @@ const swaggerJsdoc = require("swagger-jsdoc")
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
+app.use("/audios", express.static(path.join(__dirname, "public/audios")));
 app.use(cors({
     origin: "*"
 }))

@@ -6,7 +6,7 @@ router.post("/register", register)
 
 /**
  * @swagger
- * /v1/api/auth/login:
+ * /api/auth/login:
  *   post:
  *     summary: Foydalanuvchini tizimga kiritish (Login)
  *     description: Telefon raqam va parol orqali login qiladi va JWT token qaytaradi.
@@ -27,7 +27,7 @@ router.post("/register", register)
  *                 example: "+998901234567"
  *               password:
  *                 type: string
- *                 example: 12345678
+ *                 example: "12345678"
  *     responses:
  *       200:
  *         description: Muvaffaqiyatli login bo‘ldi

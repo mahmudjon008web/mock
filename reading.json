@@ -1,0 +1,208 @@
+{
+  "title": "IELTS MOCK TEST 1",
+  "parts": [
+    {
+      "part_name": "Georgia O’Keeffe",
+      "part_number": 1,
+      "part_texts": [
+        "For seven decades, Georgia O’Keeffe (1887-1986) was a major figure in American art. Remarkably, she remained independent from shifting art trends and her work stayed true to her own vision, which was based on finding the essential, abstract forms in nature. With exceptionally keen powers of observation and great finesse with a paintbrush, she recorded subtle nuances of colour, shape, and light that enlivened her paintings and attracted a wide audience",
+        " Born in 1887 near Sun Prairie, Wisconsin to cattle breeders Francis and Ida O’Keeffe, Georgia was raised on their farm along with her six siblings. By the time she graduated from high school in 1905, she had determined to make her way as an artist. She studied the techniques of traditional painting at the Art Institute of Chicago school (1905) and the Art Students League of New York (1907-8). After attending university and then training college, she became an art teacher and taught in elementary schools, high schools, and colleges in Virginia, Texas, and South Carolina from 1911 to 1918.",
+        "During this period, O’Keeffe began to experiment with creating abstract compositions in charcoal, and produced a series of innovative drawings that led her art in a new direction. She sent some of these drawings to a friend in New York, who showed them to art collector and photographer Alfred Stieglitz in January 1916. Stieglitz was impressed, and exhibited the drawings later that year at his gallery on Fifth Avenue, New York City, where the works of many avant-garde artists and photographers were introduced to the American public",
+        "With Stieglitz’s encouragement and promise of financial support, O’Keeffe arrived in New York in June 1918 to begin a career as an artist. For the next three decades, Stieglitz vigorously promoted her work in twenty-two solo exhibitions and numerous group installations. The two were married in 1924. The ups and downs of their personal and professional relationship were recorded in Stieglitz’s celebrated black-and-white portraits of O’Keeffe, taken over the course of twenty years (1917-37).",
+        "By the mid-1920s, O’Keeffe was recognized as one of America’s most important and successful artists, widely known for the architectural pictures that dramatically depict the soaring skyscrapers of New York. But most often, she painted botanical subjects, inspired by annual trips to the Stieglitz family summer home. In her magnified images depicting flowers, begun in 1924, O’Keeffe brings the viewer right into the picture.",
+        "Enlarging the tiniest details to fill an entire metre-wide canvas emphasized their shapes and lines and made them appear abstract. Such daring compositions helped establish O’Keeffe’s reputation as an innovative modernist",
+        "In 1929, O’Keeffe made her first extended trip to the state of New Mexico. It was a visit that had a lasting impact on her life, and an immediate effect on her work. Over the next two decades she made almost annual trips to New Mexico, staying up to six months there, painting in relative solitude, then returning to New York each winter to exhibit the new work at Stieglitz’s gallery. This pattern continued until she moved permanently to New Mexico in 1949.",
+        "There, O’Keeffe found new inspiration: at first, it was the numerous sun-bleached bones she came across in the state’s rugged terrain that sparked her imagination. Two of her earliest and most celebrated Southwestern paintings exquisitely reproduce a cow skull’s weathered surfaces, jagged edges, and irregular openings. Later, she also explored another variation on this theme in her large series of Pelvis pictures, which focused on the contrasts between convex and concave surfaces, and solid and open spaces. However, it was the region’s spectacular landscape, with its unusual geological formations, vivid colours, clarity of light, and exotic vegetation, that held the artist’s imagination for more than four decades. Often, she painted the rocks, cliffs, and mountains in striking close-up, just as she had done with her botanical subjects.",
+        "O’Keeffe eventually owned two homes in New Mexico – the first, her summer retreat at Ghost Ranch, was nestled beneath 200-metre cliffs, while the second, used as her winter residence, was in the small town of Abiquiú. While both locales provided a wealth of imagery for her paintings, one feature of the Abiquiú house – the large walled patio with its black door – was particularly inspirational. In more than thirty pictures between 1946 and 1960, she reinvented the patio into an abstract arrangement of geometric shapes",
+        " From the 1950s into the 1970s, O’Keeffe travelled widely, making trips to Asia, the Middle East, and Europe. Flying in planes inspired her last two major series – aerial views of rivers and expansive paintings of the sky viewed from just above clouds. In both series, O’Keeffe increased the size of her canvases, sometimes to mural proportions, reflecting perhaps her newly expanded view of the world. When in 1965 she successfully translated one of her cloud motifs to a monumental canvas measuring 6 metres in length (with the help of assistants), it was an enormous challenge and a special feat for an artist nearing eighty years of age.",
+        "The last two decades of the artist’s life were relatively unproductive as ill health and blindness hindered her ability to work. O’Keeffe died in 1986 at the age of ninety-eight, but her rich legacy of some 900 paintings has continued to attract subsequent generations of artists and art lovers who derive inspiration from these very American images."
+      ],
+      "questions": [
+        {
+          "question_type": "gap_filling",
+          "question_range": "1-7",
+          "question_text": {
+            "text1": "studied art, then worked as a _ in various places in the USA.",
+            "text2": "created drawings using _ which were exhibited in New York City.",
+            "text3": "moved to New York and became famous for her paintings of the city's _",
+            "text4": "produced a series of innovative close-up paintings of _",
+            "text5": "went to New Mexico and was initially inspired to paint the many _ that could be found there.",
+            "text6": "continued to paint various features that together formed the dramatic _ of New Mexico for over forty years.",
+            "text7": "travelled widely by plane in later years, and painted pictures of clouds and _ seen from above."
+          },
+          "answers": ["nimadir", "nimadir", "nimadir", "nimadir", "nimadir", "nimadir", "nimadir"],
+          "extra_data": {
+            "instruction": "Complete the sentences below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
+          },
+          "options": []
+        },
+        {
+          "question_type": "true_false",
+          "question_range": "8-13",
+          "question_text": {
+            "text1": "Georgia O’Keeffe’s style was greatly influenced by the changing fashions in art over the seven decades of her career.",
+            "text2": "When O’Keeffe finished high school, she had already made her mind up about the career that she wanted.",
+            "text3": "Alfred Stieglitz first discovered O’Keeffe’s work when she sent some abstract drawings to his gallery in New York City",
+            "text4": "O’Keeffe was the subject of Stieglitz’s photographic work for many years.",
+            "text5": "O’Keeffe was the subject of Stieglitz’s photographic work for many years.",
+            "text6": "O’Keeffe was the subject of Stieglitz’s photographic work for many years." 
+          },
+          "answers": ["TRUE", "FALSE", "NOT GIVEN", "TRUE", "FALSE", "NOT GIVEN"],
+          "extra_data": {
+            "instruction": "Choose TRUE if the statement agrees with the information given in the text, choose FALSE if the statement contradicts the information, or choose NOT GIVEN if there is no information on this."
+          },
+          "options": []
+        }
+      ]
+    },
+    {
+      "part_name": "Adapting to the effects of climate change",
+      "part_texts": [
+        "All around the world, nations are already preparing for, and adapting to, climate change and its impacts. Even if we stopped all CO2 emissions tomorrow, we would continue to see the impact of the CO2 already released since industrial times, with scientists forecasting that global warming would continue for around 40 years. In the meantime, ice caps would continue to melt and sea levels rise. Some countries and regions will suffer more extreme impacts from these changes than others. It’s in these places that innovation is thriving.",
+        "In Miami Beach, Florida, USA, seawater isn’t just breaching island city’s walls, it’s seeping up through the ground, so the only way to save the city is to lift it up above sea level. Starting in the lowest and most vulnerable neighbourhoods, roads have been raised by as much as 61 centimetres. The elevation work was carried out as part of Miami Beach’s ambitious but much-needed stormwater-management programme. In addition to the road adaptations, the city has set up new pumps that can remove up to 75,000 litres of water per minute. In the face of floods, climate-mitigation strategies have often been overlooked, says Yanira Pineda, a senior sustainability coordinator. She knows that they’re essential and that the job is far from over. ‘We know that in 20, 30, 40 years, we’ll need to go back in there and adjust to the changing environment,’ she says.",
+        "Seawalls are a staple strategy for many coastal communities, but on the soft, muddy northern shores of Java, Indonesia, they frequently collapse, further exacerbating coastal erosion. There have been many attempts to restore the island’s coastal mangroves: ecosystems of trees and shrubs that help defend coastal areas by trapping sediment in their net-like root systems, elevating the sea bed and dampening the energy of waves and tidal currents. But Susanna Tol of the not-for-profit organisation Wetlands International says that, while hugely popular, the majority of mangrove-planting projects fail. So, Wetlands International started out with a different approach, building semi-permeable dams, made from bamboo poles and brushwood, to mimic the role of mangrove roots and create favourable conditions for mangroves to grow back naturally. The programme has seen moderate success, mainly in areas with less subsidence. “Unfortunately, traditional infrastructure is often single-solution focused,’ says Tol. ‘For long-term success, it’s critical that we transition towards multifunctional approaches that embed natural processes and that engage and benefit communities and local decision-makers.",
+        "As the floodwaters rose in the rice fields of the Mekong Delta in September 2018, four small houses rose with them. Homes in this part of Vietnam are traditionally built on stilts but these ones had been built to float. The modifications were made by the Buoyant Foundation Project, a not-for-profit organisation that has been researching and retrofitting amphibious houses since 2006. ‘When I started this,’ explains founder Elizabeth English, ‘climate change was not on the tip of everybody’s tongue, but this technology is becoming necessary in places that didn’t previously need it.’ It’s much cheaper than permanently elevating houses, English explains – about a third of what it would cost to completely replace a building’s foundations. It also avoids the problem of taller houses being at greater risk from wind damage. Another plus comes from the fact that amphibious structures can be sensitively adapted to meet cultural needs and match the kind of houses that are already common in a community",
+        "Bangladesh is especially vulnerable to climate change. Most of the country is less than a metre above sea level and 80 per cent of its land lies on floodplains. ‘Almost 35 million people living on the coastal belt of Bangladesh are currently affected by soil and water salinity,’ says Raisa Chowdhury of the international development organisation ICCO Cooperation. Rather than fighting against it, one project is helping communities adapt to salt-affected soils. ICCO Cooperation has been working with 10,000 farmers in Bangladesh to start cultivating naturally salt-tolerant crops in the region. Certain varieties of carrot, potato, kohlrabi, cabbage and beetroot have been found to be better suited to salty soil than the rice and wheat that is typically grown there. Chowdhury says that the results are very visible, comparing a barren plot of land to the ‘beautiful, lush green vegetable garden’ sitting beside it, in which he and his team have been working with the farmers. Since the project began, farmers trained in saline agriculture have reported increases of two to three more harvests per year",
+        "Greg Spotts from Los Angeles (LA) in the USA is chief sustainability officer of the city’s street services department. He leads the Cool Streets LA programme, a series of pilot projects, which include the planting of trees and the installation of a ‘cool pavement’ system, designed to help reach the city’s goal of bringing down its average temperature by 1.5°C. ‘Urban cooling is literally a matter of life and death for our future in LA,’ says Spotts. Using a Geographic Information System data mapping tool, the programme identified streets with low tree canopy cover in three of the city’s neighbourhoods and covered them with a light-grey, light-reflecting coating, which had already been shown to lower road surface temperature in Los Angeles by 6°C. Spotts says one of these streets, in the Winnetka neighbourhood of San Fernando Valley, can now be seen as a pale crescent, the only cool spot on an otherwise red thermal image, from the International Space Station."
+      ],
+      "part_number": 2,
+      "questions": [
+        {
+          "question_type": "paragraph_matching",
+          "question_range": "14-17",
+          "question_text": {
+            "text1": "how a type of plant functions as a natural protection for coastlines",
+            "text2": "a prediction about how long it could take to stop noticing the effects of climate change.",
+            "text3": "a reference to the fact that a solution is particularly cost-effective",
+            "text4": "a mention of a technology used to locate areas most in need of intervention"
+          },
+          "answers": ["A", "B", "D", "C"],
+          "extra_data": {
+            "instruction": "The text has six sections A-F. Which section contains the following information? Choose the correct paragraph A-F."
+          },
+          "options": []
+        },
+        {
+          "question_type": "gap_filling",
+          "question_range": "18-22",
+          "question_text": {
+            "text1": "The stormwater-management programme in Miami Beach has involved the installation of efficient _",
+            "text2": "The construction of _ was the first stage of a project to ensure the success of mangroves in Indonesia",
+            "text3": "As a response to rising floodwaters in the Mekong Delta, a not-for-profit organisation has been building houses that can _",
+            "text4": "Rising sea levels in Bangladesh have made it necessary to introduce various _ that are suitable for areas of high salt content.",
+            "text5": "A project in LA has increased the number of _ on the city’s streets."
+          },
+          "answers": ["nimadir", "nimadir", "nimadir", "nimadir", "nimadir"],
+          "extra_data": {
+            "instruction": "Complete the sentences. Write ONE WORD ONLY from the text for each answer"
+          },
+          "options": []
+        },
+        {
+          "question_type": "summary",
+          "question_range": "23-26",
+          "question_text": {
+            "text1": "It is essential to adopt strategies which involve and help residents of the region.",
+            "text2": "It is essential to adopt strategies which involve and help residents of the region.",
+            "text3": "More work will need to be done in future decades to deal with the impact of rising water levels",
+            "text4": "The number of locations requiring action to adapt to flooding has grown in recent years"
+          },
+          "answers": ["Susanna Tol", "Greg Spotts", "Elizabeth English", "Yanira Pineda", "Raisa Chowdhury"],
+          "extra_data": {
+            "instruction": "Complete the summary by dragging the correct words into the gaps.",
+            "answer_instruction": "Drag names into the gaps:"
+          },
+          "options": []
+        }
+      ]
+    },
+    {
+      "part_name": "Adapting to the effects of climate change",
+      "part_texts": [
+        "When German director Fritz Lang visited the United States in 1924, his first glimpse of the country was a night-time view of the New York skyline from the deck of an ocean liner. This, he later recalled, was the direct inspiration for what is still probably the most innovative and influential science-fiction film ever made – Metropolis.",
+        "Metropolis is a bleak vision of the early twenty-first century that is at once both chilling and exhilarating. This spectacular city of the future is a technological marvel of high-rise buildings connected by elevated railways and airships. It’s also a world of extreme inequality and social division. The workers live below ground and exist as machines working in an endless routine of mind-numbing 10-hour shifts while the city’s elite lead lives of luxury high above. Presiding over them all is the Master of Metropolis, John Fredersen, whose sole satisfaction seems to lie in the exercise of power.",
+        "Lang’s graphic depiction of the future is conceived in almost totally abstract terms. The function of the individual machines is never defined. Instead, this mass of dials, levers and gauges symbolically stands for all machines and all industry, with the workers as slave-live extensions of the equipment they have to operate. Lang emphasizes this idea in the famous shift-change sequence at the start of the movie when the workers walk in zombie-like geometric ranks, all dressed in the same dark overalls and all exhibiting the same bowed head and dead-eyed stare. An extraordinary fantasy sequence sees one machine transformed into a huge open-jawed statue which then literally swallows them up",
+        "On one level the machines and the exploited workers simply provide the wealth and services which allow the elite to live their lives of leisure, but on a more profound level, the purpose of all this demented industry is to serve itself. Power, control and the continuance of the system from one 10-hour shift to the next is all that counts. The city consumes people and their labour and in the process becomes a perverse parody of a living being.",
+        "It is enlightening, I think, to relate the film to the modern global economy in which multinational corporations now routinely close their factories in one continent so that they can take advantage of cheap labour in another. Like the industry in Metropolis, these corporations’ goals of increased efficiency and profits have little to do with the welfare of the majority of their employees or that of the population at large. Instead, their aims are to sustain the momentum of their own growth and to increase the monetary rewards to a tiny elite – their executives and shareholders. Fredersen himself is the essence of the big company boss: Rupert Murdoch would probably feel perfectly at home in his huge skyscraper office with its panoramic view of the city below. And it is important that there is never any mention of government in Metropolis – the whole concept is by implication obsolete. The only people who have power are the supreme industrialist, Fredersen, and his magician/scientist cohort Rotwang.",
+        "So far so good: when the images are allowed to speak for themselves the film is impeccable both in its symbolism and in its cynicism. The problem with Metropolis is its sentimental story-line, which sees Freder, Fredersen’s son, instantly falling in love with the visionary Maria. Maria leads an underground pseudo-religious movement and preaches that the workers should not rebel but should await the arrival of a ‘Mediator’ between the ‘Head’ (capital) and the ‘Hands’ (labour). That mediator is the ‘Heart’ – love, as embodied, finally, by Freder’s love of Maria and his father’s love of him.",
+        "Lang wrote the screenplay in collaboration with his then-wife Thea von Harbou. In 1933 he fled from the Nazis (and continued a very successful career in Hollywood). She stayed in Germany and continued to make films under the Hitler regime. There is a constant tension within the film between the too-tidy platitudes of von Harbou’s script and the uncompromisingly caustic vigour of Lang’s imagery.",
+        "To my mind, both in Metropolis and in the real world, it’s not so much that the ‘Head’ and ‘Hands’ require a ‘Heart’ to mediate between them but that the ‘Hands’ need to develop their own ‘Head’, their own political consciousness, and act accordingly – through the ballot box, through buying power and through a sceptical resistance to the materialistic fantasies of the Fredersens",
+        "All the same, Metropolis is probably more accurate now as a representation of industrial and social relations than it has been at any time since its original release. And Fredersen is certainly still the most potent movie symbol of the handful of elusive corporate figureheads who increasingly treat the world as a Metropolis-like global village."
+      ],
+      "part_number": 3,
+      "questions": [
+        {
+          "question_type": "yes_no",
+          "question_range": "27-30",
+          "question_text": {
+            "text1": "The inspiration of the movie- Metropolis -comes from the director’s visit in the USA in 1924.",
+            "text2": "The Master of Metropolis, John Fredersen, is portrayed from an industrialist that the director met in the US.",
+            "text3": "The start of the movie exhibits the workers working in full energy.",
+            "text4": "The director and his wife got divorced because his wife decided to stay in Germany"
+          },
+          "answers": ["YES", "NO", "NO", "NOT GIVEN"],
+          "extra_data": {
+            "instruction": "Choose YES if the statement agrees with the information given in the text, NO if it contradicts, or NOT GIVEN if there is no information."
+          },
+          "options": []
+        },
+        {
+          "question_type": "summary",
+          "question_range": "31-36",
+          "question_text": {
+            "text1": "The director depicts a world of inequality and _",
+            "text2": "In the future, the mindless masses of workers living underground are treated as _",
+            "text3": "And the master of them is _ , who is in charge of the whole city",
+            "text4": "The writer claims that the director, Fritz Lang, presents the movie in an _ term, where the  _ of the individual machines is not defined",
+            "text5": "Besides, the writer compares the film to the modern global economy in which multinational corporations concern themselves more about the growing _ and money."
+          },
+          "answers": ["nimdir", "nimadir", "nimdir", "nimadir", "nimadir"],
+          "extra_data": {
+            "instruction": "Complete the summary. Write NO MORE THAN TWO WORDS from the text for each answer."
+          },
+          "options": []
+        },
+        {
+          "question_type": "multiple_choice",
+          "question_range": "37-40",
+          "question_text": {
+            "text1": "The first sentence in paragraph B indicates",
+            "text2": "Why the function of the individual machines is not defined?",
+            "text3": "The writer’s purpose in paragraph five is to",
+            "text4": "What is the writer’s opinion about the movie?"
+          },
+          "answers": ["A", "D", "C", "B"],
+          "extra_data": {
+            "summary_text": "Choose the correct letter, A, B, C, or D."
+          },
+          "options": [
+            {
+                "A": "the author’s fear about technology",
+                "B": "the inspiration of the director",
+                "C": "the contradictory feelings towards future",
+                "D": "the city elite’s well management of the workers"
+            },
+            {
+                "A": "Because Lang sticks to theme in a symbolic way.",
+                "B": "Because workers are more important to exploit.",
+                "C": "Because the fantasy sequence is difficult to take.",
+                "D": "Because the focus of the movie is not about machines."
+            },
+            {
+                "A": "emphasize the multinational corporations’ profit-oriented goal.",
+                "B": "compare the movie with the reality in the modern global economy",
+                "C": "exploit the difference between fantasy and reality",
+                "D": "enlighten the undeveloped industry"
+            },
+            {
+                "A": "The movie’s story-line is excellent.",
+                "B": "The movie has a poor implication in symbolism",
+                "C": "The movie is perfect in all aspects",
+                "D": "The movie is good but could be better."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
