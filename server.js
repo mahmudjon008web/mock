@@ -27,8 +27,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: 'http://localhost:4500',
-        description: 'Local server',
+        url: 'https://mock-o6f6.onrender.com',
       },
     ],
     components: {
