@@ -25,6 +25,8 @@ app.use("/audios", express.static(path.join(__dirname, "public/audios")));
 app.use(cors({
     origin: "*"
 }))
+app.set("trust proxy", true)
+
 
 const swaggerOptions = {
   definition: {
