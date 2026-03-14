@@ -55,6 +55,12 @@ const swaggerSpec = swaggerJsdoc(swaggerOptions)
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 app.use("/api", require("./routes"))
+app.use((req, res, next) => {
+  if (req.headers['x-forwarded-proto'] !== 'https') {
+    return res.redirect(`https://${req.headers.host}${req.url}`)
+  }
+  next()
+})
 app.get("/", (req, res)=>{
     res.status(200).json({
         message: "Bu IELTS MOCK uchun API"
