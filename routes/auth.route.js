@@ -2,6 +2,41 @@ const { register, login, logout } = require("../controllers/auth/auth.controller
 const { protect } = require("../middleware/protected")
 const router = require("express").Router()
 
+
+/**
+ * @swagger
+ * api/auth/register:
+ *   post:
+ *     summary: Yangi foydalanuvchi ro'yxatdan o'tkazish
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - username
+ *               - password
+ *               - phone
+ *             properties:
+ *               username:
+ *                 type: string
+ *                 example: ali
+ *               password:
+ *                 type: string
+ *                 example: 12345678
+ *               phone:
+ *                 type: string
+ *                 example: "+998901234567"
+ *     responses:
+ *       201:
+ *         description: Foydalanuvchi muvaffaqiyatli yaratildi
+ *       401:
+ *         description: Bunday foydalanuvchi oldindan mavjud
+ *       500:
+ *         description: Server xatoligi
+ */
 router.post("/register", register)
 
 /**
@@ -70,7 +105,7 @@ router.post("/login", login)
 
 /**
  * @swagger
- * /v1/api/auth/logout:
+ * /api/auth/logout:
  *   post:
  *     summary: Foydalanuvchini tizimdan chiqish
  *     description: Avtorizatsiyadan o‘tgan foydalanuvchi tizimdan chiqadi va `isLogged` maydoni false qilib yangilanadi.

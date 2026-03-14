@@ -19,10 +19,23 @@ const registerAdmin = async ()=>{
     }
 }
 
-const getUsers = async (req, res)=>{
+const getAllUsers = async (req, res)=>{
     try {
         const users = await User.findAll()
         res.status(200).json(users)
+    } catch (error) {
+        ServerError(res, error)
+    }
+}
+
+const getOneUser = async (req, res)=>{
+    try {
+        const {id} = req.params
+        const user = await User.findOne({where: {id}})
+        if(!user){
+            ValidError(res, 404, "Foydalanuvchi topilmadi!!!")
+        }
+        res.status(200).json(user)
     } catch (error) {
         ServerError(res, error)
     }
@@ -33,10 +46,10 @@ const deleteUser = async (req, res)=>{
         const {id} = req.params
         const existUser = await User.findOne({where: {id}})
         if(!existUser){
-            ValidError(res, 300, "Ma'lumot topilmadi!")
+            ValidError(res, 404, "Ma'lumot topilmadi!")
         }
         await User.destroy({where: {id: existUser.id}})
-        res.status(201).json({
+        res.status(200).json({
             message: "Foydalanuvchi muvaffaqiyatli o'chirildi"
         })
     } catch (error) {
@@ -47,5 +60,6 @@ const deleteUser = async (req, res)=>{
 module.exports = {
     registerAdmin,
     deleteUser,
-    getUsers
+    getAllUsers,
+    getOneUser
 }
