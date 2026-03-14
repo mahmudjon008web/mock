@@ -38,7 +38,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: 'https://mock-o6f6.onrender.com',
+        url: 'https://mock-o6f6.onrender.com/',
         description: "Production"
       }
     ],
