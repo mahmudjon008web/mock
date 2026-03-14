@@ -9,6 +9,15 @@ const path = require("path")
 const swaggerUi = require("swagger-ui-express")
 const swaggerJsdoc = require("swagger-jsdoc")
 
+app.use((req, res, next) => {
+  if (process.env.NODE_ENV === "production") {
+    if (req.headers["x-forwarded-proto"] !== "https") {
+      return res.redirect(`https://${req.headers.host}${req.url}`)
+    }
+  }
+  next()
+})
+
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
@@ -27,13 +36,18 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: 'https://mock-o6f6.onrender.com',
+        url: 'http://localhost:3000',
+        description: "Local"
       },
+      {
+        url: 'https://mock-o6f6.onrender.com',
+        description: "Production"
+      }
     ],
     components: {
       securitySchemes: {
         bearerAuth: {
-          type: 'https',
+          type: 'http',
           scheme: 'bearer',
           bearerFormat: 'JWT',
         },
@@ -54,12 +68,6 @@ const swaggerSpec = swaggerJsdoc(swaggerOptions)
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 app.use("/api", require("./routes"))
-app.use((req, res, next) => {
-  if (req.headers['x-forwarded-proto'] !== 'https') {
-    return res.redirect(`https://${req.headers.host}${req.url}`)
-  }
-  next()
-})
 app.get("/", (req, res)=>{
     res.status(200).json({
         message: "Bu IELTS MOCK uchun API"
