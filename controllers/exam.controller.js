@@ -7,6 +7,7 @@ const listeningOption = db.listeningOption
 const listeningQuestion = db.listeningQuestion
 const listeningPart = db.listeningPart
 const Question = db.Question
+const ReadingPart = db.ReadingPart
 const Option = db.Option
 
 const getAllExams = async (req, res) => {
