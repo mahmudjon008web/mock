@@ -74,9 +74,6 @@ const getReadingById = async (req, res) => {
     if (!data) {
       ValidError(res, 404, "Reading topilmadi")
     }
-    if(!order){
-      ValidError(res, 404, "Ma'lumot topilmadi")
-    }
     res.status(200).json(data)
   } catch (error) {
     ServerError(res, error)

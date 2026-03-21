@@ -5,5 +5,6 @@ router.use("/users", require("./user.route"))
 router.use("/writing", require("./writing.route"))
 router.use("/reading", require("./reading.route"))
 router.use("/listening", require("./listening.route"))
+router.use("/exam", require("./exam.route"))
 
 module.exports = router

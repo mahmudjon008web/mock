@@ -19,6 +19,7 @@ db.Listening = require("./listening/listening.model")(sequelize, Sequelize)
 db.listeningPart = require("./listening/listeningPart.model")(sequelize, Sequelize)
 db.listeningQuestion = require("./listening/listeningQuestion.model")(sequelize, Sequelize)
 db.listeningOption = require("./listening/listeningOption.model")(sequelize, Sequelize)
+db.Exam = require("./exam.model")(sequelize, Sequelize)
 
 
 db.Reading.hasMany(db.ReadingPart, {
@@ -82,6 +83,21 @@ db.listeningQuestion.hasMany(db.listeningOption, {
 db.listeningOption.belongsTo(db.listeningQuestion, {
     foreignKey: "listeningQuestionId",
     as: "question"
+})
+
+db.Exam.belongsTo(db.Listening, {
+    foreignKey: "listeningId",
+    as: "listening"
+})
+
+db.Exam.belongsTo(db.Reading, {
+    foreignKey: "readingId",
+    as: "reading"
+})
+
+db.Exam.belongsTo(db.Writing, {
+    foreignKey: "writingId",
+    as: "writing"
 })
 
 module.exports = db
