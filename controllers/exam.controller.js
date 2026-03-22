@@ -16,19 +16,19 @@ const getAllExams = async (req, res) => {
     const data = await Exam.findAll({
       include: [
         {
-          model: Listening,
+          model: db.Listening,
           as: "listening",
           include: [
             {
-              model: listeningPart,
+              model: db.listeningPart,
               as: "parts",
               include: [
                 {
-                  model: listeningQuestion,
+                  model: db.listeningQuestion,
                   as: "questions",
                   include: [
                     {
-                      model: listeningOption,
+                      model: db.listeningOption,
                       as: "options"
                     }
                   ]
@@ -38,19 +38,19 @@ const getAllExams = async (req, res) => {
           ]
         },
         {
-          model: Reading,
+          model: db.Reading,
           as: "reading",
           include: [
             {
-              model: ReadingPart,
+              model: db.ReadingPart,
               as: "parts",
               include: [
                 {
-                  model: Question,
+                  model: db.Question,
                   as: "questions",
                   include: [
                     {
-                      model: Option,
+                      model: db.Option,
                       as: "options"
                     }
                   ]
@@ -60,22 +60,9 @@ const getAllExams = async (req, res) => {
           ]
         },
         {
-          model: Writing,
+          model: db.Writing,
           as: "writing"
         }
-      ],
-      order: [
-        ["id", "ASC"],
-
-        // LISTENING
-        [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, "part_number", "ASC"],
-        [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, "id", "ASC"],
-        [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, { model: listeningOption, as: "options" }, "id", "ASC"],
-
-        // READING
-        [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, "part_number", "ASC"],
-        [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, "id", "ASC"],
-        [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, { model: Option, as: "options" }, "id", "ASC"]
       ]
     })
 
@@ -85,7 +72,7 @@ const getAllExams = async (req, res) => {
     })
 
   } catch (error) {
-    console.log(error)
+    console.log("ERROR 👉", error)
     ServerError(res, error)
   }
 }
@@ -93,24 +80,23 @@ const getAllExams = async (req, res) => {
 const getExamById = async (req, res) => {
   try {
     const { id } = req.params
-    const exam = await Exam.findByPk(id)
-    console.log("EXAM 👉", exam)
+
     const data = await Exam.findByPk(id, {
       include: [
         {
-          model: Listening,
+          model: db.Listening,
           as: "listening",
           include: [
             {
-              model: listeningPart,
+              model: db.listeningPart,
               as: "parts",
               include: [
                 {
-                  model: listeningQuestion,
+                  model: db.listeningQuestion,
                   as: "questions",
                   include: [
                     {
-                      model: listeningOption,
+                      model: db.listeningOption,
                       as: "options"
                     }
                   ]
@@ -120,19 +106,19 @@ const getExamById = async (req, res) => {
           ]
         },
         {
-          model: Reading,
+          model: db.Reading,
           as: "reading",
           include: [
             {
-              model: ReadingPart,
+              model: db.ReadingPart,
               as: "parts",
               include: [
                 {
-                  model: Question,
+                  model: db.Question,
                   as: "questions",
                   include: [
                     {
-                      model: Option,
+                      model: db.Option,
                       as: "options"
                     }
                   ]
@@ -142,25 +128,15 @@ const getExamById = async (req, res) => {
           ]
         },
         {
-          model: Writing,
+          model: db.Writing,
           as: "writing"
         }
-      ],
-      // order: [
-      //   // LISTENING ORDER
-      //   [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, "part_number", "ASC"],
-      //   [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, "id", "ASC"],
-      //   [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, { model: listeningOption, as: "options" }, "id", "ASC"],
-
-      //   // READING ORDER
-      //   [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, "part_number", "ASC"],
-      //   [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, "id", "ASC"],
-      //   [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, { model: Option, as: "options" }, "id", "ASC"]
-      // ]
+      ]
+      // ❗ ORDERNI HOZIRCHA QO‘SHMAYMIZ
     })
 
     if (!data) {
-      ValidError(res, 404, "Exam topilmadi")
+      return ValidError(res, 404, "Exam topilmadi")
     }
 
     res.status(200).json({
@@ -169,10 +145,7 @@ const getExamById = async (req, res) => {
 
   } catch (error) {
     console.log("ERROR 👉", error)
-    res.status(500).json({
-      message: error.message,
-      stack: error.stack
-    })
+    ServerError(res, error)
   }
 }
 
