@@ -166,8 +166,11 @@ const getExamById = async (req, res) => {
     })
 
   } catch (error) {
-    console.log(error)
-    ServerError(res, error)
+    console.log("ERROR 👉", error)
+    res.status(500).json({
+      message: error.message,
+      stack: error.stack
+    })
   }
 }
 
