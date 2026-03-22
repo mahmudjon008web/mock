@@ -13,7 +13,7 @@ const Option = db.Option
 
 const getAllExams = async (req, res) => {
   try {
-    const data = await Exam.findAll({
+    const data = await db.Exam.findAll({
       include: [
         {
           model: db.Listening,
@@ -81,7 +81,7 @@ const getExamById = async (req, res) => {
   try {
     const { id } = req.params
 
-    const data = await Exam.findByPk(id, {
+    const data = await db.Exam.findByPk(id, {
       include: [
         {
           model: db.Listening,
@@ -132,7 +132,6 @@ const getExamById = async (req, res) => {
           as: "writing"
         }
       ]
-      // ❗ ORDERNI HOZIRCHA QO‘SHMAYMIZ
     })
 
     if (!data) {

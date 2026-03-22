@@ -87,16 +87,19 @@ db.listeningOption.belongsTo(db.listeningQuestion, {
 
 db.Exam.belongsTo(db.Listening, {
     foreignKey: "listeningId",
+    targetKey: "id",
     as: "listening"
 })
 
 db.Exam.belongsTo(db.Reading, {
     foreignKey: "readingId",
+    targetKey: "id",
     as: "reading"
 })
 
 db.Exam.belongsTo(db.Writing, {
     foreignKey: "writingId",
+    targetKey: "id",
     as: "writing"
 })
 
