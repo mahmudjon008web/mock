@@ -1,6 +1,5 @@
 const db = require("../models/index")
 const { ValidError, ServerError } = require("../service/validation")
-const Exam = db.Exam
 const Listening = db.Listening
 const Reading = db.Reading
 const Writing = db.Writing
@@ -13,62 +12,67 @@ const Option = db.Option
 
 const getAllExams = async (req, res) => {
   try {
-    const data = await Exam.findAll({
+
+    const listenings = await Listening.findAll({
       include: [
         {
-          model: Listening,
-          as: "listening",
+          model: listeningPart,
+          as: "parts",
           include: [
             {
-              model: listeningPart,
-              as: "parts",
+              model: listeningQuestion,
+              as: "questions",
               include: [
                 {
-                  model: listeningQuestion,
-                  as: "questions",
-                  include: [
-                    {
-                      model: listeningOption,
-                      as: "options"
-                    }
-                  ]
+                  model: listeningOption,
+                  as: "options"
                 }
               ]
             }
           ]
-        },
-        {
-          model: Reading,
-          as: "reading",
-          include: [
-            {
-              model: ReadingPart,
-              as: "parts",
-              include: [
-                {
-                  model: Question,
-                  as: "questions",
-                  include: [
-                    {
-                      model: Option,
-                      as: "options"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          model: Writing,
-          as: "writing"
         }
+      ],
+      order: [
+        ["id", "ASC"],
+        [{ model: listeningPart, as: "parts" }, "part_number", "ASC"],
+        [{ model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, "id", "ASC"],
+        [{ model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, { model: listeningOption, as: "options" }, "id", "ASC"]
       ]
     })
 
+    const readings = await Reading.findAll({
+      include: [
+        {
+          model: ReadingPart,
+          as: "parts",
+          include: [
+            {
+              model: Question,
+              as: "questions",
+              include: [
+                {
+                  model: Option,
+                  as: "options"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      order: [
+        ["id", "ASC"],
+        [{ model: ReadingPart, as: "parts" }, "part_number", "ASC"],
+        [{ model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, "id", "ASC"],
+        [{ model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, { model: Option, as: "options" }, "id", "ASC"]
+      ]
+    })
+
+    const writings = await Writing.findAll()
+
     res.status(200).json({
-      count: data.length,
-      data
+      listening: listenings,
+      reading: readings,
+      writing: writings
     })
 
   } catch (error) {
@@ -81,65 +85,72 @@ const getExamById = async (req, res) => {
   try {
     const { id } = req.params
 
-    const data = await Exam.findByPk(id, {
+    // LISTENING
+    const listening = await Listening.findByPk(id, {
       include: [
         {
-          model: Listening,
-          as: "listening",
+          model: listeningPart,
+          as: "parts",
           include: [
             {
-              model: listeningPart,
-              as: "parts",
+              model: listeningQuestion,
+              as: "questions",
               include: [
                 {
-                  model: listeningQuestion,
-                  as: "questions",
-                  include: [
-                    {
-                      model: listeningOption,
-                      as: "options"
-                    }
-                  ]
+                  model: listeningOption,
+                  as: "options"
                 }
               ]
             }
           ]
-        },
-        {
-          model: Reading,
-          as: "reading",
-          include: [
-            {
-              model: ReadingPart,
-              as: "parts",
-              include: [
-                {
-                  model: Question,
-                  as: "questions",
-                  include: [
-                    {
-                      model: Option,
-                      as: "options"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          model: Writing,
-          as: "writing"
         }
+      ],
+      order: [
+        [{ model: listeningPart, as: "parts" }, "part_number", "ASC"],
+        [{ model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, "id", "ASC"],
+        [{ model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, { model: listeningOption, as: "options" }, "id", "ASC"]
       ]
     })
 
-    if (!data) {
-      return ValidError(res, 404, "Exam topilmadi")
+    // READING
+    const reading = await Reading.findByPk(id, {
+      include: [
+        {
+          model: ReadingPart,
+          as: "parts",
+          include: [
+            {
+              model: Question,
+              as: "questions",
+              include: [
+                {
+                  model: Option,
+                  as: "options"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      order: [
+        [{ model: ReadingPart, as: "parts" }, "part_number", "ASC"],
+        [{ model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, "id", "ASC"],
+        [{ model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, { model: Option, as: "options" }, "id", "ASC"]
+      ]
+    })
+
+    // WRITING
+    const writing = await Writing.findByPk(id)
+
+    // AGAR HAMMASI YO‘Q BO‘LSA
+    if (!listening && !reading && !writing) {
+      return ValidError(res, 404, "Ma'lumot topilmadi")
     }
 
     res.status(200).json({
-      data
+      listening,
+      reading,
+      writing
     })
 
   } catch (error) {
