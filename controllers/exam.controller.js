@@ -13,22 +13,22 @@ const Option = db.Option
 
 const getAllExams = async (req, res) => {
   try {
-    const data = await db.Exam.findAll({
+    const data = await Exam.findAll({
       include: [
         {
-          model: db.Listening,
+          model: Listening,
           as: "listening",
           include: [
             {
-              model: db.listeningPart,
+              model: listeningPart,
               as: "parts",
               include: [
                 {
-                  model: db.listeningQuestion,
+                  model: listeningQuestion,
                   as: "questions",
                   include: [
                     {
-                      model: db.listeningOption,
+                      model: listeningOption,
                       as: "options"
                     }
                   ]
@@ -38,19 +38,19 @@ const getAllExams = async (req, res) => {
           ]
         },
         {
-          model: db.Reading,
+          model: Reading,
           as: "reading",
           include: [
             {
-              model: db.ReadingPart,
+              model: ReadingPart,
               as: "parts",
               include: [
                 {
-                  model: db.Question,
+                  model: Question,
                   as: "questions",
                   include: [
                     {
-                      model: db.Option,
+                      model: Option,
                       as: "options"
                     }
                   ]
@@ -60,7 +60,7 @@ const getAllExams = async (req, res) => {
           ]
         },
         {
-          model: db.Writing,
+          model: Writing,
           as: "writing"
         }
       ]
@@ -81,22 +81,22 @@ const getExamById = async (req, res) => {
   try {
     const { id } = req.params
 
-    const data = await db.Exam.findByPk(id, {
+    const data = await Exam.findByPk(id, {
       include: [
         {
-          model: db.Listening,
+          model: Listening,
           as: "listening",
           include: [
             {
-              model: db.listeningPart,
+              model: listeningPart,
               as: "parts",
               include: [
                 {
-                  model: db.listeningQuestion,
+                  model: listeningQuestion,
                   as: "questions",
                   include: [
                     {
-                      model: db.listeningOption,
+                      model: listeningOption,
                       as: "options"
                     }
                   ]
@@ -106,19 +106,19 @@ const getExamById = async (req, res) => {
           ]
         },
         {
-          model: db.Reading,
+          model: Reading,
           as: "reading",
           include: [
             {
-              model: db.ReadingPart,
+              model: ReadingPart,
               as: "parts",
               include: [
                 {
-                  model: db.Question,
+                  model: Question,
                   as: "questions",
                   include: [
                     {
-                      model: db.Option,
+                      model: Option,
                       as: "options"
                     }
                   ]
@@ -128,7 +128,7 @@ const getExamById = async (req, res) => {
           ]
         },
         {
-          model: db.Writing,
+          model: Writing,
           as: "writing"
         }
       ]
