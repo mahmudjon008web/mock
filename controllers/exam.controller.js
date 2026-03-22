@@ -1,4 +1,5 @@
 const db = require("../models/index")
+const { ValidError, ServerError } = require("../service/validation")
 const Exam = db.Exam
 const Listening = db.Listening
 const Reading = db.Reading
@@ -158,7 +159,7 @@ const getExamById = async (req, res) => {
     })
 
     if (!data) {
-      return ValidError(res, 404, "Exam topilmadi")
+      ValidError(res, 404, "Exam topilmadi")
     }
 
     res.status(200).json({
