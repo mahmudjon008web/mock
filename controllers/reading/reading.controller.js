@@ -64,11 +64,11 @@ const getReadingById = async (req, res) => {
           ]
         }
       ],
-      order: [
-        [{ model: ReadingPart, as: "parts" }, "part_number", "ASC"],
-        [{ model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }],
-        [{ model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, { model: Option, as: "options" }, "id", "ASC"]
-      ]
+      // order: [
+      //   [{ model: ReadingPart, as: "parts" }, "part_number", "ASC"],
+      //   [{ model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }],
+      //   [{ model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, { model: Option, as: "options" }, "id", "ASC"]
+      // ]
     })
 
     if (!data) {
