@@ -80,7 +80,7 @@ app.use((req, res)=>{
 
 const PORT = process.env.PORT
 const start = async ()=>{
-    await db.sequelize.sync({force: true})
+    await db.sequelize.sync({force: false})
     await registerAdmin()
     app.listen(PORT, ()=>{
         console.log(`Server is running on http://localhost:${PORT}`.bgGreen);
