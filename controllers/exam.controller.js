@@ -93,7 +93,8 @@ const getAllExams = async (req, res) => {
 const getExamById = async (req, res) => {
   try {
     const { id } = req.params
-
+    const exam = await Exam.findByPk(id)
+    console.log("EXAM 👉", exam)
     const data = await Exam.findByPk(id, {
       include: [
         {
@@ -145,17 +146,17 @@ const getExamById = async (req, res) => {
           as: "writing"
         }
       ],
-      order: [
-        // LISTENING ORDER
-        [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, "part_number", "ASC"],
-        [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, "id", "ASC"],
-        [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, { model: listeningOption, as: "options" }, "id", "ASC"],
+      // order: [
+      //   // LISTENING ORDER
+      //   [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, "part_number", "ASC"],
+      //   [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, "id", "ASC"],
+      //   [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, { model: listeningOption, as: "options" }, "id", "ASC"],
 
-        // READING ORDER
-        [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, "part_number", "ASC"],
-        [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, "id", "ASC"],
-        [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, { model: Option, as: "options" }, "id", "ASC"]
-      ]
+      //   // READING ORDER
+      //   [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, "part_number", "ASC"],
+      //   [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, "id", "ASC"],
+      //   [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, { model: Option, as: "options" }, "id", "ASC"]
+      // ]
     })
 
     if (!data) {
