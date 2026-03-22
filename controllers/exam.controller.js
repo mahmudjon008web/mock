@@ -12,39 +12,7 @@ const Option = db.Option
 
 const getAllExams = async (req, res) => {
   try {
-    const exams = await Exam.findAll({
-      include: [
-        {
-          model: Listening,
-          as: "listening"
-        },
-        {
-          model: Reading,
-          as: "reading"
-        },
-        {
-          model: Writing,
-          as: "writing"
-        }
-      ],
-      order: [["id", "DESC"]]
-    })
-
-    res.status(200).json({
-      count: exams.length,
-      data: exams
-    })
-
-  } catch (error) {
-    ServerError(res, error)
-  }
-}
-
-const getExamById = async (req, res) => {
-  try {
-    const { id } = req.params
-
-    const exam = await Exam.findByPk(id, {
+    const data = await Exam.findAll({
       include: [
         {
           model: Listening,
@@ -94,18 +62,111 @@ const getExamById = async (req, res) => {
           model: Writing,
           as: "writing"
         }
+      ],
+      order: [
+        ["id", "ASC"],
+
+        // LISTENING
+        [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, "part_number", "ASC"],
+        [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, "id", "ASC"],
+        [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, { model: listeningOption, as: "options" }, "id", "ASC"],
+
+        // READING
+        [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, "part_number", "ASC"],
+        [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, "id", "ASC"],
+        [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, { model: Option, as: "options" }, "id", "ASC"]
       ]
     })
 
-    if (!exam) {
+    res.status(200).json({
+      count: data.length,
+      data
+    })
+
+  } catch (error) {
+    console.log(error)
+    ServerError(res, error)
+  }
+}
+
+const getExamById = async (req, res) => {
+  try {
+    const { id } = req.params
+
+    const data = await Exam.findByPk(id, {
+      include: [
+        {
+          model: Listening,
+          as: "listening",
+          include: [
+            {
+              model: listeningPart,
+              as: "parts",
+              include: [
+                {
+                  model: listeningQuestion,
+                  as: "questions",
+                  include: [
+                    {
+                      model: listeningOption,
+                      as: "options"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          model: Reading,
+          as: "reading",
+          include: [
+            {
+              model: ReadingPart,
+              as: "parts",
+              include: [
+                {
+                  model: Question,
+                  as: "questions",
+                  include: [
+                    {
+                      model: Option,
+                      as: "options"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          model: Writing,
+          as: "writing"
+        }
+      ],
+      order: [
+        // LISTENING ORDER
+        [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, "part_number", "ASC"],
+        [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, "id", "ASC"],
+        [{ model: Listening, as: "listening" }, { model: listeningPart, as: "parts" }, { model: listeningQuestion, as: "questions" }, { model: listeningOption, as: "options" }, "id", "ASC"],
+
+        // READING ORDER
+        [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, "part_number", "ASC"],
+        [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, "id", "ASC"],
+        [{ model: Reading, as: "reading" }, { model: ReadingPart, as: "parts" }, { model: Question, as: "questions" }, { model: Option, as: "options" }, "id", "ASC"]
+      ]
+    })
+
+    if (!data) {
       return ValidError(res, 404, "Exam topilmadi")
     }
 
     res.status(200).json({
-      data: exam
+      data
     })
 
   } catch (error) {
+    console.log(error)
     ServerError(res, error)
   }
 }
