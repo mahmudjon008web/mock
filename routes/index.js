@@ -6,6 +6,5 @@ router.use("/writing", require("./writing.route"))
 router.use("/reading", require("./reading.route"))
 router.use("/listening", require("./listening.route"))
 router.use("/exam", require("./exam.route"))
-router.use("/cache", require("./exam.route"))
 
 module.exports = router
