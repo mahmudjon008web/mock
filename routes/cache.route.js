@@ -8,7 +8,7 @@ const router = require("express").Router()
  * /api/cache/clearAll:
  *   post:
  *     summary: Ma'lumotlar bazasini sinxronizatsiya qilish (ixtiyoriy tozalash bilan)
- *     tags: [Admin]
+ *     tags: [Cache]
  *     requestBody:
  *       required: false
  *       content:
