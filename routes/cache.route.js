@@ -1,8 +1,8 @@
+const router = require("express").Router()
 const { syncDatabase } = require("../middleware/clearcache")
 const { isAdmin } = require("../middleware/isAdmin")
 const { protect } = require("../middleware/protected")
 
-const router = require("express").Router()
 /**
  * @swagger
  * /api/cache/clearAll:
